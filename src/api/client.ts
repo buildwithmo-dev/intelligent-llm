@@ -69,7 +69,7 @@ export const api = {
       false,
     ),
   login: (email: string, password: string) =>
-    request<{ access_token: string }>("/auth/login", json({ email, password }), false),
+    request<{ access_token: string }>("/api/auth/login", json({ email, password }), false),
   me: () => request<User>("/api/auth/me"),
   listConversations: () => request<Conversation[]>("/conversations"),
   createConversation: (title: string | null) =>
