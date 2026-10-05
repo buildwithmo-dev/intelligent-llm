@@ -73,9 +73,9 @@ export const api = {
   me: () => request<User>("/api/auth/me"),
   listConversations: () => request<Conversation[]>("/conversations"),
   createConversation: (title: string | null) =>
-    request<Conversation>("/conversations", json({ title })),
+    request<Conversation>("/api/conversations", json({ title })),
   listMessages: (conversationId: string) =>
-    request<Message[]>(`/conversations/${conversationId}/messages`),
+    request<Message[]>(`/api/conversations/${conversationId}/messages`),
   sendMessage: (conversationId: string, content: string) =>
-    request<Message>(`/conversations/${conversationId}/messages`, json({ content })),
+    request<Message>(`/api/conversations/${conversationId}/messages`, json({ content })),
 };
