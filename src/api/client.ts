@@ -64,7 +64,7 @@ const json = (body: unknown) => ({ method: "POST", body: JSON.stringify(body) })
 export const api = {
   signup: (email: string, password: string, displayName?: string) =>
     request<{ access_token: string }>(
-      "/auth/signup",
+      "/api/auth/signup",
       json({ email, password, display_name: displayName || null }),
       false,
     ),
